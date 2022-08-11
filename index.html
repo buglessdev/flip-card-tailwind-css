@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+    <style>
+              .flip {
+        perspective: 600px;  
+      }
+      .flip-content {
+        transform-style: preserve-3d;
+      }
+      .flip:hover .flip-content {
+        transform: rotateY(180deg);
+        transition: transform 0.3s;
+      }
+
+      .flip-front, .flip-back {
+        backface-visibility: hidden;  
+      }
+      .flip-back {
+        transform: rotateY(180deg);
+      }
+
+    </style>
+</head>
+<body>
+    <div class="flip w-36 h-36 text-center">
+        <div class="flip-content w-full h-full transition-transform">
+          <div class="flip-front absolute w-full h-full text-white border-4">
+            <img src="https://www.fillmurray.com/150/150" />
+          </div>
+          <div class="flip-back absolute w-full h-full text-black border-4">
+            <strong>BILL MURRAY</strong>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
